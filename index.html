@@ -6,30 +6,34 @@
     <script src="scripts/script.js"></script>
     <title>Salary Calculator</title>
 </head>
-<header>
-    <h1>Salary Calculator</h1>
-</header>
 <body>
-    <section class="inputSection">
-        <input type=text class="inputs" id="firstNameInput" placeholder="First Name"/>
-        <input type=text class="inputs" id="lastNameInput" placeholder="Last Name"/>
-        <input type=number class="inputs" id="employeeIdInput" placeholder="Employee ID"/>
-        <input type=text class="inputs" id="titleInput" placeholder="Title"/>
-        <input type=number class="inputs" id="salaryInput" placeholder="Salary"/>
-        <button id="submitButton">Submit</button>
-    </section>
-    <table class="employeeTable">
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Annual Salary</th>
-          <th></th>
-        </tr>
-      </table>
-      <h2>Monthly Costs: $<span id="monthlyCosts"></span></h2>
-      <h2>Monthly Budget $<span id="monthlyBudget">20,000</span></h2>
+    <div class ="container">
+        <header>
+            <h1>Salary Calculator</h1>
+        </header>
+        <section class="inputSection">
+            <h2>Monthly Budget $<span id="monthlyBudget">20,000</span></h2>
+            <h2>Monthly Costs: $<span id="monthlyCosts"></span></h2>
+            <input type=text class="inputs" id="firstNameInput" placeholder="First Name"/>
+            <input type=text class="inputs" id="lastNameInput" placeholder="Last Name"/>
+            <input type=number class="inputs" id="employeeIdInput" placeholder="Employee ID"/>
+            <input type=text class="inputs" id="titleInput" placeholder="Title"/>
+            <input type=number class="inputs" id="salaryInput" placeholder="Salary"/>
+            <button class="inputs" id="submitButton">Submit</button>
+        </section>
+        <section class="tableSection">
+            <table class="employeeTable">
+                <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Employee ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+                <th></th>
+                </tr>
+            </table>
+        </section>
+    </div>
 </body>
 </html>
 
