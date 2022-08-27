@@ -1,23 +1,23 @@
 $(document).ready(clickHandler);
 
 function clickHandler(){
-    $(`#submitButton`).on(`click`, addEmployee);
+    $(`#submitButton`).on(`click`, addEmployee); //when button is clicked, add the employee
 }
 
 let employees = [];
 
 function addEmployee(){
-    let employeeData = {
+    let employeeData = {  //change values of employeeData object to input values
         firstName: $(`#firstNameInput`).val(),
         lastName: $(`#lastNameInput`).val(),
         employeeId: $(`#employeeIdInput`).val(),
         title: $(`#titleInput`).val(),
-        salary: $(`#salaryInput`).val()
+        salary: Number($(`#salaryInput`).val())
     }
-    employees.push(employeeData);
-    console.log(employees);
+    employees.push(employeeData); //add employeeData object to array of employees
+    console.log(employees); ////////////////////////////////////TESTING
 
-    $(`.employeeTable`).append(`
+    $(`.employeeTable`).append(`  
     <tr>
         <td>${employeeData.firstName}</td>
         <td>${employeeData.lastName}</td>
@@ -25,14 +25,18 @@ function addEmployee(){
         <td>${employeeData.title}</td>
         <td>${employeeData.salary}</td>
         <td>Delete</td>
-    </tr>`);
+    </tr>`);    //add new employee data to table
 
-    $(`.inputs`).val('');
-    calculateCosts;
+    $(`.inputs`).val('');  //empty imputs
+    calculateCosts();
 }
 
 function calculateCosts(){
-    for (employee of table){
-
+    $(`#monthlyCosts`).empty();
+    let totalCost = 0;
+    for (employee of employees){
+        totalCost += employee.salary;
     }
+    $(`#monthlyCosts`).append(`${totalCost}`);
+    console.log(totalCost);
 }
