@@ -2,9 +2,12 @@ $(document).ready(clickHandler);
 
 function clickHandler(){
     $(`#submitButton`).on(`click`, addEmployee); //when button is clicked, add the employee
+    $(".employeeTable").on("click", ".deleteButton", function() {
+        $(this).closest("tr").remove();
+     }); //when button is clicked, delete employee
 }
 
-let employees = [];
+let employeeArray = [];
 
 function addEmployee(){
     let employeeData = {  //change values of employeeData object to input values
@@ -12,31 +15,39 @@ function addEmployee(){
         lastName: $(`#lastNameInput`).val(),
         employeeId: $(`#employeeIdInput`).val(),
         title: $(`#titleInput`).val(),
-        salary: Number($(`#salaryInput`).val())
+        salary: Number($(`#salaryInput`).val()),
     }
-    employees.push(employeeData); //add employeeData object to array of employees
-    console.log(employees); ////////////////////////////////////TESTING
+    employeeArray.push(employeeData); //add employeeData object to array of employees
 
-    $(`.employeeTable`).append(`  
+    
+    $(`.employeeTable`).append(`
     <tr>
         <td>${employeeData.firstName}</td>
         <td>${employeeData.lastName}</td>
         <td>${employeeData.employeeId}</td>
         <td>${employeeData.title}</td>
         <td>${employeeData.salary}</td>
-        <td>Delete</td>
-    </tr>`);    //add new employee data to table
+        <td><button class="deleteButton">X</button></td>
+    </tr>`);  //add new employee data to table
 
     $(`.inputs`).val('');  //empty imputs
     calculateCosts();
 }
 
-function calculateCosts(){
-    $(`#monthlyCosts`).empty();
-    let totalCost = 0;
-    for (employee of employees){
-        totalCost += employee.salary;
-    }
-    $(`#monthlyCosts`).append(`${totalCost}`);
-    console.log(totalCost);
+function appendTable(){
+    
 }
+
+function calculateCosts(){
+    $(`#monthlyCosts`).empty(); //empty out monthly costs
+    let totalCost = 0;
+    for (employee of employeeArray){
+        totalCost += employee.salary; //loop through to add all employees' salaries
+    }  //end loop
+    if (totalCost > 20000){
+        $(`#monthlyBudget`).css("background-color", "red"); //if salary cost exceeds budget, turn red
+        console.log('red');
+    }
+    $(`#monthlyCosts`).append(`${totalCost}`); //add new monthly total to DOM
+}
+
