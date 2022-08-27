@@ -17,11 +17,11 @@ function addEmployee(){
         title: $(`#titleInput`).val(),
         salary: Number($(`#salaryInput`).val()),
     }
-    employeeArray.push(employeeData); //add employeeData object to array of employees
 
+    employeeArray.push(employeeData); //add employeeData object to array of employees
     
     $(`.employeeTable`).append(`
-    <tr>
+    <tr id = "${employeeData.employeeId}">
         <td>${employeeData.firstName}</td>
         <td>${employeeData.lastName}</td>
         <td>${employeeData.employeeId}</td>
@@ -50,4 +50,3 @@ function calculateCosts(){
     }
     $(`#monthlyCosts`).append(`${totalCost}`); //add new monthly total to DOM
 }
-
