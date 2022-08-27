@@ -4,6 +4,7 @@ body{
     font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 50%;
+    margin: 0;
 }
 
 table{
@@ -24,7 +25,7 @@ th {
 }
 
 .inputSection{
-    margin: 10em 5em 1em 6.5em;
+    margin: 4em 5em 1em 6.5em;
     padding: 30px;
 }
 
@@ -33,4 +34,11 @@ th {
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     width: 15%;
+}
+
+h1{
+    background-color: darkcyan;
+    margin: 0;
+    padding: 50px;
+    text-align: center;
 }

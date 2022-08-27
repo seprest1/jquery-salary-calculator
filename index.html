@@ -6,6 +6,9 @@
     <script src="scripts/salary.js"></script>
     <title>Salary Calculator</title>
 </head>
+<header>
+    <h1>Salary Calculator</h1>
+</header>
 <body>
     <section class="inputSection">
         <input type=text class="inputs" id="firstNameInput" placeholder="First Name"/>
@@ -13,8 +16,9 @@
         <input type=number class="inputs" id="employeeIdInput" placeholder="Employee ID"/>
         <input type=text class="inputs" id="titleInput" placeholder="Title"/>
         <input type=number class="inputs" id="salaryInput" placeholder="Salary"/>
+        <button id="submitButton">Submit</button>
     </section>
-    <table>
+    <table class="employeeTable">
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
@@ -31,6 +35,14 @@
           <td id="salary">70,000</td>
           <td id="delete">delete</td>
         </tr>
+        <tr>
+            <td id="firstName">Sarah</td>
+            <td id="lastName">Preston</td>
+            <td id="employeeId">12345</td>
+            <td id="title">Wizard</td>
+            <td id="salary">70,000</td>
+            <td id="delete">delete</td>
+          </tr>
       </table>
 </body>
 </html>
