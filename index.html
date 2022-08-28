@@ -10,10 +10,14 @@
     <div class ="container">
         <header>
             <h1>Salary Calculator</h1>
+            <img src="calc2.png" id="calc"/>
         </header>
         <section class="inputSection">
-            <h2>Monthly Budget $<span id="monthlyBudget">20,000</span></h2>
-            <h2>Monthly Costs: $<span id="monthlyCosts"></span></h2>
+            <div class="progressContainer">
+                <div class="bar"></div>
+            </div>
+            <h2 id="budget">Monthly Budget <span id="dollarSign">$</span><span id="monthlyBudget">20,000</span></h2>
+            <h2 id="cost">Monthly Costs: $<span id="monthlyCosts"></span></h2>
             <input type=text class="inputs" id="firstNameInput" placeholder="First Name"/>
             <input type=text class="inputs" id="lastNameInput" placeholder="Last Name"/>
             <input type=number class="inputs" id="employeeIdInput" placeholder="Employee ID"/>

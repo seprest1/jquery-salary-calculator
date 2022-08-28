@@ -2,7 +2,7 @@ $(document).ready(clickHandler);
 
 function clickHandler(){
     $(`#submitButton`).on(`click`, addEmployee); //when button is clicked, add the employee
-    $(".employeeTable").on("click", ".deleteButton", $(`#tableSalary`), deleteEmployee); //when button is clicked, delete employee
+    $(".employeeTable").on("click", ".deleteButton", deleteEmployee); //when button is clicked, delete employee
 }
 
 let employeeArray = [];
@@ -27,14 +27,9 @@ function addEmployee(){
         <td><button class="deleteButton">X</button></td>
     </tr>`);  //add new employee data to table
 
-    $(`.employeeSalary`).data(`salary ${employeeData.employeeId}`, $(`#salaryInput`).val());
-    console.log(`Employee Salary:`, $(`.employeeSalary`).data());
-
     $(`.inputs`).val('');  //empty imputs
     calculateCosts();
 }
-
-console.log(`Employee Salary:`, $(`.employeeSalary`).data());
 
 function calculateCosts(){
     $(`#monthlyCosts`).empty(); //empty out monthly costs
@@ -42,14 +37,74 @@ function calculateCosts(){
     for (employee of employeeArray){
         totalCost += employee.salary; //loop through to add all employees' salaries
     }  //end loop
-    if (totalCost > 20000){
-        $(`#monthlyBudget`).css("background-color", "red"); //if salary cost exceeds budget, turn red
-    }
     $(`#monthlyCosts`).append(`${totalCost}`); //add new monthly total to DOM
+    if (totalCost > 20000){
+        $(`#monthlyBudget`).css("color", "#dd1c1a"); //if salary cost exceeds budget, turn red
+        $(`#dollarSign`).css("color", "#dd1c1a"); //dollar sign turns red
+        $(`.bar`).css("width", "2%");
+    }
+ 
+    if (totalCost >= 0 && totalCost < 5000){
+        $(`.bar`).css("width", "100%");
+            }
+    if (totalCost >= 5000 && totalCost < 10000){
+        $(`.bar`).css("width", "75%");
+            }
+    if (totalCost >= 10000 && totalCost < 15000){
+        $(`.bar`).css("width", "50%");
+            }
+    if (totalCost >= 15000 && totalCost < 17000){
+        $(`.bar`).css("width", "25%");
+            }
+    if (totalCost >= 17000 && totalCost < 18000){
+        $(`.bar`).css("width", "17.5%");
+            }
+    if (totalCost >= 18000 && totalCost < 19000){
+        $(`.bar`).css("width", "10%");
+             }
+    if (totalCost >= 19000 && totalCost < 20000){
+        $(`.bar`).css("width", "5%");
+             }
+    }
+
+function changeCss(){
+    
 }
 
+
 function deleteEmployee(){
-    $(this).closest("tr").remove();
+    $(this).closest("tr").remove(); 
  }
 
- 
+
+
+
+
+
+
+
+/////////////TO LOOK AT/////////////
+// function pressEnter(){
+//  $(`.inputs`).keyup(function(e) {
+//     if (e.which === 13)
+//     {
+//         e.preventDefault();
+//         $(`#inputSection`).submit();
+//     }
+//  })
+// }
+
+// function progressBar(){
+//   let element = document.getElementById("progressContainer");   
+//   let width = 1;
+//   var identity = setInterval(subtract, 10);
+//   function subtract() {
+//    if ($(`#monthlyCosts`).val() < 5000){
+
+//    }
+//    else if ($(`#monthlyCosts`).val() > 5000 && $(`#monthlyCosts`).val() < 10000){
+
+//    }
+//    else if ($(`#monthlyCosts`).val() > 10000 && <)
+//   }
+// }
