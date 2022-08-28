@@ -7,6 +7,14 @@ function clickHandler(){
 
 let employeeArray = [];
 
+let employeeData = {  //change values of employeeData object to input values
+    firstName: '',
+    lastName: '',
+    employeeId: '',
+    title: '',
+    salary: '',
+}
+
 function addEmployee(){
     let employeeData = {  //change values of employeeData object to input values
         firstName: $(`#firstNameInput`).val(),
@@ -15,6 +23,7 @@ function addEmployee(){
         title: $(`#titleInput`).val(),
         salary: Number($(`#salaryInput`).val()),
     }
+
     employeeArray.push(employeeData); //add employeeData object to array of employees
 
     let salaryString = employeeData.salary.toLocaleString("en-US"); //adds commas
@@ -26,16 +35,18 @@ function addEmployee(){
         <td>${employeeData.employeeId}</td>
         <td>${employeeData.title}</td>
         <td>${salaryString}</td>
-        <td><button class="deleteButton">X</button></td>
+        <td><button class="deleteButton" id="${employeeData.employeeId}">X</button></td>
     </tr>`);  //add new employee data to table
 
     $(`.inputs`).val('');  //empty imputs
     calculateCosts();
 }
 
+let totalCost; 
+
 function calculateCosts(){
     $(`#monthlyCosts`).empty(); //empty out monthly costs
-    let totalCost = 0;
+    totalCost = 0;
     for (employee of employeeArray){
         totalCost += employee.salary; //loop through to add all employees' salaries
     }  //end loop
@@ -45,7 +56,10 @@ function calculateCosts(){
         $(`#dollarSign`).css("color", "#dd1c1a"); //dollar sign turns red
         $(`.bar`).css("width", "2%");
     }
- 
+    progressBar();
+}
+
+function progressBar(){
     if (totalCost >= 0 && totalCost < 5000){
         $(`.bar`).css("width", "100%");
             }
@@ -69,7 +83,22 @@ function calculateCosts(){
              }
 }
 
+
 function deleteEmployee(){
     $(this).closest("tr").remove();
-    console.log($(this));
- }
+    let firedID = Number($(this).attr("id"));
+    console.log(firedID);
+
+    function filterOutEmployee(){
+        if (employeeData.employeeId = firedID){
+            return true;
+        }   
+    }
+    let firedOne = employeeArray.filter(filterOutEmployee);
+        console.log(employeeArray);
+        console.log(employeeArray.indexOf(firedOne)); 
+}
+
+
+
+   

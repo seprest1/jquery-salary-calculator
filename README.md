@@ -1,9 +1,17 @@
 # Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Salary Calculator
 
 ## Description
+Duration: 14 hours, over a weekend.
 
-Your project description goes here. What problem did you solve? How did you solve it?
+I was tasked with making a table, where the user could add a list of employees with the properties (first name, last name, ID, title and salary). Using Jquery, I developed functions to add the listed employee's salaries together and compare it to a set budget. Once the budget ceiling was reached, the display would turn red. In addition to the assignment, I spent some time making the tool look polished in CSS and crafting a reverse progress bar, tied directly to the incoming salary data. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+# Screen Shot
+
+This is the example we were given:
+<img src="/images/example.png"/>
+
+And my product:
+<img src="/images/screenshot1.png"/>
+<img src="/images/screenshot2.png"/>
+
