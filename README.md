@@ -11,11 +11,12 @@ I was able to solve the problem of appending each employee onto the DOM by creat
 # Screen Shot
 
 This is the example we were given:
-<img src="/images/example.png"/>
+![Example](https://user-images.githubusercontent.com/105940054/187097916-1b51e700-8a9e-4acd-b31e-dc17b3395f8f.png)
 
 And my product:
-<img src="/images/screenshot1.png"/>
-<img src="/images/screenshot2.png"/>
+<img width="1440" alt="Screen Shot 2022-08-28 at 1 42 58 PM" src="https://user-images.githubusercontent.com/105940054/187097887-56202c42-4a8e-4aa6-b5bf-c0a803691770.png">
+
+<img width="1440" alt="Screen Shot 2022-08-28 at 1 58 26 PM" src="https://user-images.githubusercontent.com/105940054/187097791-96b7ca10-fc1b-46a3-80d5-6bda37d62281.png">
 
 ##Unfinished Areas/Future Plans
 
