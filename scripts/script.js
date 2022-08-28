@@ -16,14 +16,16 @@ function addEmployee(){
         salary: Number($(`#salaryInput`).val()),
     }
     employeeArray.push(employeeData); //add employeeData object to array of employees
-    
+
+    let salaryString = employeeData.salary.toLocaleString("en-US"); //adds commas
+ 
     $(`.employeeTable`).append(`
     <tr id= "${employeeData.employeeId}">
         <td>${employeeData.firstName}</td>
         <td>${employeeData.lastName}</td>
         <td>${employeeData.employeeId}</td>
         <td>${employeeData.title}</td>
-        <td class="employeeSalary" >${employeeData.salary}</td>
+        <td>${salaryString}</td>
         <td><button class="deleteButton">X</button></td>
     </tr>`);  //add new employee data to table
 
@@ -37,7 +39,7 @@ function calculateCosts(){
     for (employee of employeeArray){
         totalCost += employee.salary; //loop through to add all employees' salaries
     }  //end loop
-    $(`#monthlyCosts`).append(`${totalCost}`); //add new monthly total to DOM
+    $(`#monthlyCosts`).append(`${totalCost.toLocaleString("en-US")}`); //add new monthly total to DOM, added commas
     if (totalCost > 20000){
         $(`#monthlyBudget`).css("color", "#dd1c1a"); //if salary cost exceeds budget, turn red
         $(`#dollarSign`).css("color", "#dd1c1a"); //dollar sign turns red
@@ -65,46 +67,9 @@ function calculateCosts(){
     if (totalCost >= 19000 && totalCost < 20000){
         $(`.bar`).css("width", "5%");
              }
-    }
-
-function changeCss(){
-    
 }
 
-
 function deleteEmployee(){
-    $(this).closest("tr").remove(); 
+    $(this).closest("tr").remove();
+    console.log($(this));
  }
-
-
-
-
-
-
-
-
-/////////////TO LOOK AT/////////////
-// function pressEnter(){
-//  $(`.inputs`).keyup(function(e) {
-//     if (e.which === 13)
-//     {
-//         e.preventDefault();
-//         $(`#inputSection`).submit();
-//     }
-//  })
-// }
-
-// function progressBar(){
-//   let element = document.getElementById("progressContainer");   
-//   let width = 1;
-//   var identity = setInterval(subtract, 10);
-//   function subtract() {
-//    if ($(`#monthlyCosts`).val() < 5000){
-
-//    }
-//    else if ($(`#monthlyCosts`).val() > 5000 && $(`#monthlyCosts`).val() < 10000){
-
-//    }
-//    else if ($(`#monthlyCosts`).val() > 10000 && <)
-//   }
-// }
