@@ -18,7 +18,7 @@ And my product:
 
 <img width="1440" alt="Screen Shot 2022-08-28 at 1 58 26 PM" src="https://user-images.githubusercontent.com/105940054/187097791-96b7ca10-fc1b-46a3-80d5-6bda37d62281.png">
 
-##Unfinished Areas/Future Plans
+## Unfinished Areas/Future Plans
 
 I will attempt to update the total salary to reflect the new total, once an employee is removed.
 I would also like the progress bar to reflect the new total. 
